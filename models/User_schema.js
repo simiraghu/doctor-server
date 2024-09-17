@@ -29,15 +29,16 @@ const User_schema = new Schema(
             type: String
         },
 
-        salary: {
-            required: true,
-            type: Number
-        },
-
-        jobprofile: {
+        password: {
             required: true,
             type: String
         },
+
+        role: {
+            type: String,
+            default: "user",
+            enum: ["user", "admin"]
+        }
 
     }, { timestamps: true }
 )
